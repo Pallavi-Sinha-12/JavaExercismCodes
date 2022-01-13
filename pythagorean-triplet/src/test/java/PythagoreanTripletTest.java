@@ -10,8 +10,10 @@ public class PythagoreanTripletTest {
 
     @Test
     public void tripletsWhoseSumIs12() {
+
+        PythagoreanTriplet pythagoreanTriplet = new PythagoreanTriplet();
         List<PythagoreanTriplet> actual
-                = PythagoreanTriplet
+                = pythagoreanTriplet
                         .makeTripletsList()
                         .withFactorsLessThanOrEqualTo(12)
                         .thatSumTo(12)
@@ -21,11 +23,11 @@ public class PythagoreanTripletTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void tripletsWhoseSumIs108() {
+        PythagoreanTriplet pythagoreanTriplet = new PythagoreanTriplet();
         List<PythagoreanTriplet> actual
-                = PythagoreanTriplet
+                = pythagoreanTriplet
                         .makeTripletsList()
                         .withFactorsLessThanOrEqualTo(108)
                         .thatSumTo(108)
@@ -35,11 +37,11 @@ public class PythagoreanTripletTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void tripletsWhoseSumIs1000() {
+        PythagoreanTriplet pythagoreanTriplet = new PythagoreanTriplet();
         List<PythagoreanTriplet> actual
-                = PythagoreanTriplet
+                = pythagoreanTriplet
                         .makeTripletsList()
                         .withFactorsLessThanOrEqualTo(1000)
                         .thatSumTo(1000)
@@ -49,11 +51,11 @@ public class PythagoreanTripletTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void tripletsWhoseSumIs1001() {
+        PythagoreanTriplet pythagoreanTriplet = new PythagoreanTriplet();
         List<PythagoreanTriplet> actual
-                = PythagoreanTriplet
+                = pythagoreanTriplet
                         .makeTripletsList()
                         .withFactorsLessThanOrEqualTo(1001)
                         .thatSumTo(1001)
@@ -62,11 +64,11 @@ public class PythagoreanTripletTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void tripletsWhoseSumIs90() {
+        PythagoreanTriplet pythagoreanTriplet = new PythagoreanTriplet();
         List<PythagoreanTriplet> actual
-                = PythagoreanTriplet
+                = pythagoreanTriplet
                         .makeTripletsList()
                         .withFactorsLessThanOrEqualTo(90)
                         .thatSumTo(90)
@@ -78,11 +80,11 @@ public class PythagoreanTripletTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void tripletsWhoseSumIs840() {
+        PythagoreanTriplet pythagoreanTriplet = new PythagoreanTriplet();
         List<PythagoreanTriplet> actual
-                = PythagoreanTriplet
+                = pythagoreanTriplet
                         .makeTripletsList()
                         .withFactorsLessThanOrEqualTo(840)
                         .thatSumTo(840)
@@ -100,11 +102,11 @@ public class PythagoreanTripletTest {
         assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void tripletsWhoseSumIs30000() {
+        PythagoreanTriplet pythagoreanTriplet = new PythagoreanTriplet();
         List<PythagoreanTriplet> actual
-                = PythagoreanTriplet
+                = pythagoreanTriplet
                         .makeTripletsList()
                         .withFactorsLessThanOrEqualTo(30000)
                         .thatSumTo(30000)

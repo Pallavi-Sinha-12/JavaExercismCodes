@@ -3,54 +3,57 @@ import java.util.ArrayList;
 
 class PythagoreanTriplet
 {
-    private int a,b,c;
-    private static int N;
+    private int tripletMemberOne, tripletMemberTwo, tripletMemberThree;
+    private int sum;
     
-    private static List<PythagoreanTriplet> tripletsList = new ArrayList<>();
-    private static PythagoreanTriplet instance = new PythagoreanTriplet();
+    private List<PythagoreanTriplet> tripletsList = new ArrayList<>();
     
     public PythagoreanTriplet()
     {
         
     }
     
-    public PythagoreanTriplet(int a, int b, int c)
+    public PythagoreanTriplet(int tripletMemberOne, int tripletMemberTwo, int tripletMemberThree)
     {
-        this.a = a;
-        this.b = b;
-        this.c = c;
+        this.tripletMemberOne = tripletMemberOne;
+        this.tripletMemberTwo = tripletMemberTwo;
+        this.tripletMemberThree  = tripletMemberThree;
+
     }
     
-    public static PythagoreanTriplet makeTripletsList()
+    public PythagoreanTriplet makeTripletsList()
     {
-        tripletsList = new ArrayList<>();
-        return instance;
+        return new PythagoreanTriplet();
     }
     
-    public static PythagoreanTriplet withFactorsLessThanOrEqualTo(int limit)
+    public PythagoreanTriplet withFactorsLessThanOrEqualTo(int limit)
     {
-        return instance;
+        sum = sum;
+        return this;
     }
     
-    public static PythagoreanTriplet thatSumTo(int sum)
+    public PythagoreanTriplet thatSumTo(int sum)
     {
-        N = sum;
-        return instance;
-    }
-    
-    public static List<PythagoreanTriplet> build()
-    {
-        for(int i = 1; i<=N/3; i++)
+        for(int member1 = 1; member1<=sum/3; member1++)
         {
-            for(int j=i+1; j<=(N-i)/2; j++)
+            for(int member2 = member1+1; member2<=(sum-member1)/2; member2++)
             {
-                int k = N-i-j;
-                if (Math.pow(i,2) + Math.pow(j,2) == Math.pow(k,2))
+                int member3 = sum - (member1 + member2);
+                if (isFollowingPythagoreanTheorem(member1, member2, member3))
                 {
-                    tripletsList.add(new PythagoreanTriplet(i,j,k));
+                    tripletsList.add(new PythagoreanTriplet(member1, member2, member3));
                 }
             }
         }
+        return this;
+    }
+
+    private boolean isFollowingPythagoreanTheorem(int member1, int member2, int member3) {
+        return Math.pow(member1, 2) + Math.pow(member2, 2) == Math.pow(member3, 2);
+    }
+
+    public List<PythagoreanTriplet> build()
+    {
         return tripletsList;
     }
     @Override
@@ -61,14 +64,11 @@ class PythagoreanTriplet
             return false;
         }
         PythagoreanTriplet triplet = (PythagoreanTriplet) other;
-        if ((this.a == triplet.a ) && (this.b==triplet.b) && (this.c == triplet.c))
+        if ((this.tripletMemberOne == triplet.tripletMemberOne ) && (this.tripletMemberTwo==triplet.tripletMemberTwo) && (this.tripletMemberThree== triplet.tripletMemberThree))
         {
             return true;
         }
-        else
-        {
-            return false;
-        }
+        return false;
         
     }
 }
