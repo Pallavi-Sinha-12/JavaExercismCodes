@@ -2,46 +2,33 @@ import java.util.*;
 import java.lang.*;
 class TwelveDays {
     String verse(int verseNumber) {
-        Map<Integer, String> verseRecord = new HashMap<>();
-        verseRecord.put(1, "a Partridge in a Pear Tree");
-        verseRecord.put(2, "two Turtle Doves");
-        verseRecord.put(3, "three French Hens");
-        verseRecord.put(4, "four Calling Birds");
-        verseRecord.put(5, "five Gold Rings");
-        verseRecord.put(6, "six Geese-a-Laying");
-        verseRecord.put(7, "seven Swans-a-Swimming");
-        verseRecord.put(8, "eight Maids-a-Milking");
-        verseRecord.put(9, "nine Ladies Dancing");
-        verseRecord.put(10, "ten Lords-a-Leaping");
-        verseRecord.put(11, "eleven Pipers Piping");
-        verseRecord.put(12, "twelve Drummers Drumming");
-
+        String[] verseRecord = {"a Partridge in a Pear Tree", "two Turtle Doves","three French Hens", "four Calling Birds", "five Gold Rings", "six Geese-a-Laying", "seven Swans-a-Swimming",  "eight Maids-a-Milking", "nine Ladies Dancing", "ten Lords-a-Leaping",  "eleven Pipers Piping", "twelve Drummers Drumming"};
         String[] day = {"first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth", "ninth", "tenth", "eleventh", "twelfth"};
-        String starting_verse = "On the ";
-        String middle_verse = " day of Christmas my true love gave to me: ";
-        String end_verse = "";
-        for (int i= verseNumber; i>=1; i--)
+        String startingVerse = "On the ";
+        String middleVerse = " day of Christmas my true love gave to me: ";
+        String endVerse = "";
+        for (int itemNumber= verseNumber; itemNumber>=1; itemNumber--)
             {
-                if (i==1)
-                    end_verse += verseRecord.get(i) + ".";
-                else if (i==2)
-                    end_verse += verseRecord.get(i) + ", and ";
+                if (itemNumber==1)
+                    endVerse += verseRecord[itemNumber-1] + ".";
+                else if (itemNumber==2)
+                    endVerse += verseRecord[itemNumber-1] + ", and ";
                 else
-                    end_verse += verseRecord.get(i) + ", ";
+                    endVerse += verseRecord[itemNumber-1] + ", ";
             }
-        String required_verse = starting_verse + day[verseNumber-1] + middle_verse + end_verse + "\n";
-        return required_verse;
+        String requiredVerse = startingVerse + day[verseNumber-1] + middleVerse + endVerse + "\n";
+        return requiredVerse;
     }
 
     String verses(int startVerse, int endVerse) {
-        StringBuilder complete_verse = new StringBuilder();
-        for (int i=startVerse; i<=endVerse; i++)
+        StringBuilder completeVerse = new StringBuilder();
+        for (int dayNumber=startVerse; dayNumber<=endVerse; dayNumber++)
             {
-                complete_verse.append(verse(i));
-                if (i!=endVerse)
-                    complete_verse.append("\n");
+                completeVerse.append(verse(dayNumber));
+                if (dayNumber!=endVerse)
+                    completeVerse.append("\n");
             }
-        return complete_verse.toString();
+        return completeVerse.toString();
     }
     
     String sing() {
